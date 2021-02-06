@@ -1,0 +1,14 @@
+___________________________________________________
+Klienta vārds - mhm
+Klienta adrese - yes,yes,yes
+Klienta tālrunis - 454543
+-------------------------------------------
+Pasūtijuma nr.1
+Klienta vārds - ye
+Klienta adrese - te
+Klienta tālrunis - 334322
+-------------------------------------------
+Pasūtijuma nr.1
+Klienta vārds - yfgddfg
+Klienta adrese - burh
+Klienta tālrunis - 234242342
