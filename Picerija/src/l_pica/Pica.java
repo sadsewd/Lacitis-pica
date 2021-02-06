@@ -20,16 +20,17 @@ public class Pica {
 		
 	}
 	
-	void sagInfo(String pVards, String adrese, int tlrNr) {
+	void sagInfo(String pVards, String adrese, int tlrNr, int picasIzm) {
 		
 		try {
 			FileWriter fw = new FileWriter("PKlientaInfo.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
 			raksta.println("-------------------------------------------");
 			raksta.println("Klienta vārds - "+pVards+"\nKlienta adrese - "+adrese+"\nKlienta tālrunis - "+tlrNr);
+			raksta.println("Picas lielums "+picasIzm+" cm");
 			raksta.close();
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(null, "Radās kļūme saglabājot failu!", "Kļūme!",JOptionPane.ERROR_MESSAGE);
 		}
-	}	
+	}
 }
