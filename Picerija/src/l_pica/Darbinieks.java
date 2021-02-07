@@ -7,10 +7,10 @@ public class Darbinieks {
 		static void pasutijums() {
 			
 		String[] piedevas = {};
-		String adrese="",pVards="",iev="",merce="";
+		String adrese="",pVards="",iev="",merce="",fails = "";
 		int tlrNr=0, picasIzm=0,m = 0,s1=0,s2=0,v=0,t=0,sn=0;
 		
-		Pica pica = new Pica(adrese,pVards,tlrNr,picasIzm,merce,piedevas);
+		Pica pica = new Pica(adrese,pVards,tlrNr,picasIzm,merce,piedevas,fails);
 		
 		do {
 		iev = JOptionPane.showInputDialog("Vai pasūtijums tiks nodots ar kurjeru? (jā/nē)");
@@ -155,8 +155,7 @@ public class Darbinieks {
 		}
 		
 	public static void main(String[] args) {	
-	String iev;
-	
+	String iev,fails;
 	JOptionPane.showMessageDialog(null,"Izvēlaties kuru funkciju vēlaties izpildīt");
 	
 	do {
@@ -164,8 +163,8 @@ public class Darbinieks {
 	
 	switch(iev) {
 	case "1": pasutijums(); break;
-	case "2": break;
-	case "3": break;
+	case "2": fails = "PasutijumaInfoArAdresi.txt"; Pica.izlasitfailu(fails); break;
+	case "3": fails = "PasutijumaInfoBezAdreses.txt"; Pica.izlasitfailu(fails); break;
 	case "stop": System.exit(0);
 	}
 	}while(!iev.equals("stop"));
