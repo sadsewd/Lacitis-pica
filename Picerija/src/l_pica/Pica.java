@@ -20,14 +20,34 @@ public class Pica {
 		
 	}
 	
-	void sagInfo(String pVards, String adrese, int tlrNr, int picasIzm) {
+	void sagInfo(String pVards, String adrese, int tlrNr, int picasIzm, String[] piedevas) {
 		
 		try {
 			FileWriter fw = new FileWriter("PKlientaInfo.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
-			raksta.println("-------------------------------------------");
+			raksta.println("\n-------------------------------------------");
 			raksta.println("Klienta vārds - "+pVards+"\nKlienta adrese - "+adrese+"\nKlienta tālrunis - "+tlrNr);
 			raksta.println("Picas lielums "+picasIzm+" cm");
+			raksta.print("Picas piedevas - ");
+			for(int i = 0; i<piedevas.length;i++) {
+				raksta.print(piedevas[i]+" ");
+			}
+			raksta.close();
+		}catch(Exception e) {
+			JOptionPane.showMessageDialog(null, "Radās kļūme saglabājot failu!", "Kļūme!",JOptionPane.ERROR_MESSAGE);
+		}
+	}
+	void sagInfoBezAd(int picasIzm, String[] piedevas) {
+		try {
+			FileWriter fw = new FileWriter("PKlientaInfo.txt", true);
+			PrintWriter raksta = new PrintWriter(fw);
+			raksta.println("\n-------------------------------------------");
+			raksta.println("Pica tiek saņemta uz vietas");
+			raksta.println("Picas lielums "+picasIzm+" cm");
+			raksta.print("Picas piedevas - ");
+			for(int i = 0; i<piedevas.length;i++) {
+				raksta.print(piedevas[i]+" ");
+			}
 			raksta.close();
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(null, "Radās kļūme saglabājot failu!", "Kļūme!",JOptionPane.ERROR_MESSAGE);
