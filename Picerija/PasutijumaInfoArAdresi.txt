@@ -1,7 +1,0 @@
-
--------------------------------------------
-Klienta vārds - Pēteris
-Klienta adrese - Liepāja, kuršu iela 5, "Indriķi"
-Klienta tālrunis - 29330534
-Picas lielums 35 cm
-Picas piedevas - Sķiņķis siers tomātu mērce 

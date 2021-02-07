@@ -10,8 +10,9 @@ public class Pica {
 	String[] piedevas;
 	String adrese,pVards,merce,fails;
 	int tlrNr,picasIzm;
+	double cena;
 	
-	public Pica(String adrese, String pVards, int tlrNr, int picasIzm, String merce, String[] piedevas,String fails) {
+	public Pica(String adrese, String pVards, int tlrNr, int picasIzm, String merce, String[] piedevas,String fails,double cena) {
 		
 		this.pVards = pVards;
 		this.adrese = adrese;
@@ -20,12 +21,12 @@ public class Pica {
 		this.merce = merce;
 		this.piedevas = piedevas;
 		this.fails = fails;
-		
+		this.cena = cena;
 		
 	}
 	
-	void sagInfo(String pVards, String adrese, int tlrNr, int picasIzm, String[] piedevas) {
-		
+	void sagInfo(String pVards, String adrese, int tlrNr, int picasIzm, String[] piedevas,double cena) {	
+		double cenaArPVN = cena*1.21;
 		try {
 			FileWriter fw = new FileWriter("PasutijumaInfoArAdresi.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
@@ -36,12 +37,15 @@ public class Pica {
 			for(int i = 0; i<piedevas.length;i++) {
 				raksta.print(piedevas[i]+" ");
 			}
+			raksta.println("Pasūtijuma cena bez PVN - "+cena+" EUR (+3.0 Euro par piegādi)");
+			raksta.println("Pasūtijuma cena ar PVN - "+cenaArPVN+" EUR");
 			raksta.close();
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(null, "Radās kļūme saglabājot failu!", "Kļūme!",JOptionPane.ERROR_MESSAGE);
 		}
 	}
-	void sagInfoBezAd(int picasIzm, String[] piedevas) {
+	void sagInfoBezAd(int picasIzm, String[] piedevas,double cena) {
+		double cenaArPVN = cena*1.21;
 		try {
 			FileWriter fw = new FileWriter("PasutijumaInfoBezAdreses.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
@@ -52,6 +56,8 @@ public class Pica {
 			for(int i = 0; i<piedevas.length;i++) {
 				raksta.print(piedevas[i]+" ");
 			}
+			raksta.println("Pasūtijuma cena bez PVN - "+cena+" EUR");
+			raksta.println("Pasūtijuma cena ar PVN - "+cenaArPVN+" EUR");
 			raksta.close();
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(null, "Radās kļūme saglabājot failu!", "Kļūme!",JOptionPane.ERROR_MESSAGE);

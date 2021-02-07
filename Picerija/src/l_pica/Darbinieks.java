@@ -5,12 +5,13 @@ import javax.swing.JOptionPane;
 public class Darbinieks {
 
 		static void pasutijums() {
-			
+		
+		double cena = 0;
 		String[] piedevas = {};
 		String adrese="",pVards="",iev="",merce="",fails = "";
 		int tlrNr=0, picasIzm=0,m = 0,s1=0,s2=0,v=0,t=0,sn=0;
 		
-		Pica pica = new Pica(adrese,pVards,tlrNr,picasIzm,merce,piedevas,fails);
+		Pica pica = new Pica(adrese,pVards,tlrNr,picasIzm,merce,piedevas,fails,cena);
 		
 		do {
 		iev = JOptionPane.showInputDialog("Vai pasūtijums tiks nodots ar kurjeru? (jā/nē)");
@@ -20,22 +21,27 @@ public class Darbinieks {
 		pVards = JOptionPane.showInputDialog("Ievadi klienta vārdu : ");
 		tlrNr = Integer.parseInt(JOptionPane.showInputDialog("Ievadi klienta talr : "));
 		adrese = JOptionPane.showInputDialog("Ievadi pasūtijuma pigādes ardresi : ");
+
+		cena = 3.0; /*3 Euro par piegādi*/
 		
 		do{			
-		iev	= JOptionPane.showInputDialog("Ievadi kāds būs picas izmērs (jaievada dotais burts!) | s - maza pica (20 cm) | m - vidēja lieluma pica (35 cm) | b - liela izmera pica (50 cm) |");			
-		}while(!iev.equals("s") && !iev.equals("m") && !iev.equals("b"));
-				
-			if(iev.equals("s")) {
-			picasIzm = 20;
-			}else if(iev.equals("m")) {
-			picasIzm = 35;
-			}else if(iev.equals("b")) {
-			picasIzm = 50;
-			}
+			iev	= JOptionPane.showInputDialog("Ievadi kāds būs picas izmērs (jaievada dotais burts!) | s - maza pica (20 cm) | m - vidēja lieluma pica (35 cm) | b - liela izmera pica (50 cm) |");			
+			}while(!iev.equals("s") && !iev.equals("m") && !iev.equals("b"));
+					
+				if(iev.equals("s")) {
+				picasIzm = 20;
+				cena = cena + 1.5;
+				}else if(iev.equals("m")) {
+				picasIzm = 35;
+				cena = cena + 2.5;
+				}else if(iev.equals("b")) {
+				picasIzm = 50;
+				cena = cena + 3.5;
+				}
 			
 			do {
 				
-				iev	= JOptionPane.showInputDialog("Ievadi vai būs piedevas | šķiņķis - š | vista - v | siers - s  | tomātu mērce - t | sēnes - sn | stop - beigt izvēlēties piedevas |");
+				iev	= JOptionPane.showInputDialog("Ievadi vai būs piedevas | Šķiņķis - š | Vista - v | Siers - s  | Tomātu mērce - t | Sēnes - sn | stop - beigt izvēlēties piedevas |");
 				
 				if(iev.equals("š")) {
 					s1++;
@@ -67,26 +73,33 @@ public class Darbinieks {
 				int x=0;
 				
 				if(s1 > 0) {
-					piedevas[x] = "Sķiņķis";
+					piedevas[x] = "Šķiņķis";
 					x++;
+					cena = cena + 1.8;
 				}if (s2 > 0) {
-					piedevas[x] = "siers";
+					piedevas[x] = "Siers";
 					x++;
+					cena = cena + 0.8;
 				}if (v > 0) {
 					piedevas[x] = "Vista";
 					x++;
+					cena = cena + 1.2;
 				}if (t > 0) {
-					piedevas[x] = "tomātu mērce";
+					piedevas[x] = "Tomātu mērce";
 					x++;
+					cena = cena + 0.3;
 				}if (sn > 0) {
-					piedevas[x] = "sēnes";
+					piedevas[x] = "Sēnes";
 					x++;
+					cena = cena + 0.6;
 				}
 				
 				
-			pica.sagInfo(pVards, adrese, tlrNr, picasIzm, piedevas);
+			pica.sagInfo(pVards, adrese, tlrNr, picasIzm, piedevas,cena);
 			
 			}else if(iev.equals("nē")) {
+				
+				cena = 0;
 				
 				do{			
 					iev	= JOptionPane.showInputDialog("Ievadi kāds būs picas izmērs (jaievada dotais burts!) | s - maza pica (20 cm) | m - vidēja lieluma pica (35 cm) | b - liela izmera pica (50 cm) |");			
@@ -94,14 +107,17 @@ public class Darbinieks {
 							
 						if(iev.equals("s")) {
 						picasIzm = 20;
+						cena = cena + 1.5;
 						}else if(iev.equals("m")) {
 						picasIzm = 35;
+						cena = cena + 2.5;
 						}else if(iev.equals("b")) {
 						picasIzm = 50;
+						cena = cena + 3.5;
 						}
-			
+						
 				do {
-					iev	= JOptionPane.showInputDialog("Ievadi vai būs piedevas | šķiņķis - š | vista - v | siers - s  | tomātu mērce - t | sēnes - sn | stop - beigt izvēlēties piedevas |");
+					iev	= JOptionPane.showInputDialog("Ievadi vai būs piedevas | Šķiņķis - š | Vista - v | Siers - s  | Tomātu mērce - t | Sēnes - sn | stop - beigt izvēlēties piedevas |");
 					
 					if(iev.equals("š")) {
 						s1++;
@@ -131,26 +147,32 @@ public class Darbinieks {
 					piedevas = new String[m];
 					
 					int x=0;
+					 
 					
 					if(s1 > 0) {
-						piedevas[x] = "Sķiņķis";
+						piedevas[x] = "Šķiņķis";
 						x++;
+						cena = cena + 1.8;
 					}if (s2 > 0) {
-						piedevas[x] = "siers";
+						piedevas[x] = "Siers";
 						x++;
+						cena = cena + 0.8;
 					}if (v > 0) {
 						piedevas[x] = "Vista";
 						x++;
+						cena = cena + 1.2;
 					}if (t > 0) {
-						piedevas[x] = "tomātu mērce";
+						piedevas[x] = "Tomātu mērce";
 						x++;
+						cena = cena + 0.3;
 					}if (sn > 0) {
-						piedevas[x] = "sēnes";
+						piedevas[x] = "Sēnes";
 						x++;
+						cena = cena + 0.6;
 					}
 					
 					
-				pica.sagInfoBezAd(picasIzm, piedevas);				
+				pica.sagInfoBezAd(picasIzm, piedevas,cena);				
 			}
 		}
 		
