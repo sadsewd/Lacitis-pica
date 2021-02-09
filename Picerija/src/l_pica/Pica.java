@@ -74,6 +74,7 @@ public class Pica {
 				while((teksts=lasa.readLine())!=null) {
 					System.out.println(teksts);
 				}
+				lasa.close();
 			}catch(Exception e) {
 				JOptionPane.showMessageDialog(null, "Radās kļūme lasot failu!", "Kļūme!",JOptionPane.ERROR_MESSAGE);}
 			
@@ -86,9 +87,11 @@ public class Pica {
 				while((teksts=lasa.readLine())!=null) {
 					System.out.println(teksts);	
 				}
+				lasa.close();
 			}catch(Exception e) {
 				JOptionPane.showMessageDialog(null, "Radās kļūme lasot failu!", "Kļūme!",JOptionPane.ERROR_MESSAGE);}
 			
 		}
+		
 		}
 	}

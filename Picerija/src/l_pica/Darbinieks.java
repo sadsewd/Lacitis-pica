@@ -75,23 +75,23 @@ public class Darbinieks {
 				if(s1 > 0) {
 					piedevas[x] = "Šķiņķis";
 					x++;
-					cena = cena + 1.8;
+					cena = cena + 3.8;
 				}if (s2 > 0) {
 					piedevas[x] = "Siers";
 					x++;
-					cena = cena + 0.8;
+					cena = cena + 2.85;
 				}if (v > 0) {
 					piedevas[x] = "Vista";
 					x++;
-					cena = cena + 1.2;
+					cena = cena + 3;
 				}if (t > 0) {
 					piedevas[x] = "Tomātu mērce";
 					x++;
-					cena = cena + 0.3;
+					cena = cena + 1.3;
 				}if (sn > 0) {
 					piedevas[x] = "Sēnes";
 					x++;
-					cena = cena + 0.6;
+					cena = cena + 1.6;
 				}
 				
 				
@@ -152,23 +152,23 @@ public class Darbinieks {
 					if(s1 > 0) {
 						piedevas[x] = "Šķiņķis";
 						x++;
-						cena = cena + 1.8;
+						cena = cena + 3.8;
 					}if (s2 > 0) {
 						piedevas[x] = "Siers";
 						x++;
-						cena = cena + 0.8;
+						cena = cena + 2.85;
 					}if (v > 0) {
 						piedevas[x] = "Vista";
 						x++;
-						cena = cena + 1.2;
+						cena = cena + 3;
 					}if (t > 0) {
 						piedevas[x] = "Tomātu mērce";
 						x++;
-						cena = cena + 0.3;
+						cena = cena + 1.3;
 					}if (sn > 0) {
 						piedevas[x] = "Sēnes";
 						x++;
-						cena = cena + 0.6;
+						cena = cena + 1.6;
 					}
 					
 					
@@ -188,6 +188,7 @@ public class Darbinieks {
 	case "2": fails = "PasutijumaInfoArAdresi.txt"; Pica.izlasitfailu(fails); break;
 	case "3": fails = "PasutijumaInfoBezAdreses.txt"; Pica.izlasitfailu(fails); break;
 	case "stop": System.exit(0);
+	default : JOptionPane.showMessageDialog(null, "Tika nepareizi ievadīta funkcija!");
 	}
 	}while(!iev.equals("stop"));
    }
