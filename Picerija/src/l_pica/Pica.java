@@ -30,7 +30,6 @@ public class Pica {
 		try {
 			FileWriter fw = new FileWriter("PasutijumaInfoArAdresi.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
-			raksta.println("\n-------------------------------------------");
 			raksta.println("Klienta vārds - "+pVards+"\nKlienta adrese - "+adrese+"\nKlienta tālrunis - "+tlrNr);
 			raksta.println("Picas lielums "+picasIzm+" cm");
 			raksta.print("Picas piedevas - ");
@@ -39,6 +38,7 @@ public class Pica {
 			}
 			raksta.println("Pasūtijuma cena bez PVN - "+cena+" EUR (+3.0 Euro par piegādi)");
 			raksta.println("Pasūtijuma cena ar PVN - "+cenaArPVN+" EUR");
+			raksta.println("\n-------------------------------------------");
 			raksta.close();
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(null, "Radās kļūme saglabājot failu!", "Kļūme!",JOptionPane.ERROR_MESSAGE);
@@ -49,7 +49,6 @@ public class Pica {
 		try {
 			FileWriter fw = new FileWriter("PasutijumaInfoBezAdreses.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
-			raksta.println("\n-------------------------------------------");
 			raksta.println("Pica tiek saņemta uz vietas");
 			raksta.println("Picas lielums "+picasIzm+" cm");
 			raksta.print("Picas piedevas - ");
@@ -58,6 +57,7 @@ public class Pica {
 			}
 			raksta.println("Pasūtijuma cena bez PVN - "+cena+" EUR");
 			raksta.println("Pasūtijuma cena ar PVN - "+cenaArPVN+" EUR");
+			raksta.println("\n-------------------------------------------");
 			raksta.close();
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(null, "Radās kļūme saglabājot failu!", "Kļūme!",JOptionPane.ERROR_MESSAGE);

@@ -6,3 +6,11 @@ Klienta tālrunis - 29330876
 Picas lielums 35 cm
 Picas piedevas - Šķiņķis Siers Tomātu mērce Pasūtijuma cena bez PVN - 13.450000000000001 EUR (+3.0 Euro par piegādi)
 Pasūtijuma cena ar PVN - 16.2745 EUR
+Klienta vārds - Jānis
+Klienta adrese - Liepāja, piejūras iela, "Sarmas"
+Klienta tālrunis - 29330943
+Picas lielums 20 cm
+Picas piedevas - Siers Tomātu mērce Pasūtijuma cena bez PVN - 8.65 EUR (+3.0 Euro par piegādi)
+Pasūtijuma cena ar PVN - 10.4665 EUR
+
+-------------------------------------------
