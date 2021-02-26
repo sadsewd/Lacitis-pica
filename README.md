@@ -13,4 +13,4 @@ Palikušie darbi:
 - [ ] Pievienot jaunu funkcionalitāti
 
 Kā arī būtu interesanti veidot programmām GUI pēc dotā piemēra :
-!(http://3.bp.blogspot.com/-LmTRUAzJVjw/UFbhO9LScaI/AAAAAAAAABI/ODtpMHqHY-s/s1600/Pizza.png)
+![BildeParPicu](http://3.bp.blogspot.com/-LmTRUAzJVjw/UFbhO9LScaI/AAAAAAAAABI/ODtpMHqHY-s/s1600/Pizza.png)
